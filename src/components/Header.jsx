@@ -10,11 +10,14 @@ export default function Header() {
       <div>
         <Link
           to="/cart"
-          className="bg-slate-800 text-white px-4 py-1 rounded mr-2"
+          className="bg-slate-800 text-white px-4 py-1 rounded mr-2 btn-hover"
         >
           Cart
         </Link>
-        <Link to="/login" className="bg-slate-800 text-white px-4 py-1 rounded">
+        <Link
+          to="/login"
+          className="bg-slate-800 text-white px-4 py-1 rounded btn-hover"
+        >
           Log In
         </Link>
       </div>

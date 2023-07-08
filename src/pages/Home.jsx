@@ -19,7 +19,7 @@ export default function Home() {
       </h2>
 
       {allProducts ? (
-        <div className="grid grid-cols-5 gap-5 my-4">
+        <div className="grid grid-cols-4 gap-5 my-4 max-w-6xl mx-auto">
           {allProducts.map((p) => (
             <ProductCard product={p} key={p.id} />
           ))}

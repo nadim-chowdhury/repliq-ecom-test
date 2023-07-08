@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <form className="max-w-sm mx-auto mt-8">
+      <h2 className="mb-4 text-2xl font-bold">Login Here</h2>
+
       <div className="flex flex-col">
         <input
           type="email"

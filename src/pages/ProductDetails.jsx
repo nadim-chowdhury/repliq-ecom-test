@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { add } from "../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 export default function ProductDetails() {
   const [item, setItem] = useState(null);
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   console.log(item);
 
@@ -15,7 +18,7 @@ export default function ProductDetails() {
   }, [id]);
 
   return (
-    <div className="flex justify-center px-4 max-w-6xl mx-auto">
+    <div className="flex justify-center px-4 max-w-6xl mx-auto mt-8">
       {item ? (
         <>
           <div className="w-96 overflow-hidden rounded mr-8">
@@ -61,7 +64,10 @@ export default function ProductDetails() {
               <h3>Available: {item.stock} Piece</h3>
             </div>
 
-            <button className="bg-slate-800 text-white px-4 py-1 rounded btn-hover">
+            <button
+              onClick={() => dispatch(add(item))}
+              className="bg-slate-800 text-white px-4 py-1 rounded btn-hover"
+            >
               Add To Cart
             </button>
           </div>

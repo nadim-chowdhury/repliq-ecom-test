@@ -17,7 +17,7 @@ function Cart() {
   // }, [products, dispatch]);
 
   const openModal = () => {
-    alert("Thanks for shopping & stay connected");
+    alert("Thanks for shopping");
   };
 
   return (
@@ -57,14 +57,18 @@ function Cart() {
         <p>Total Price: ${useSelector((state) => state.totalPrice)}</p>
       </div> */}
 
-      {
-        products.length > 0 ? <button
-        className="btn-hover px-4 py-1 bg-slate-800 text-white rounded w-32 mx-auto block"
-        onClick={openModal}
-      >
-        Checkout
-      </button> : <p className="text-xl text-center text-slate-600 mt-8 border rounded py-2">There is no products in your cart</p>
-      }
+      {products.length > 0 ? (
+        <button
+          className="btn-hover px-4 py-1 bg-slate-800 text-white rounded w-32 mx-auto block"
+          onClick={openModal}
+        >
+          Checkout
+        </button>
+      ) : (
+        <p className="text-xl text-center text-slate-600 mt-8 border rounded py-2">
+          There is no products in your cart
+        </p>
+      )}
     </div>
   );
 }
